@@ -23,8 +23,6 @@ namespace Running.Scripts
         private Vector3 _leftClamp;
         private Vector3 _rightClamp;
 
-        private Vector3 _bornPos;
-
         private bool _startMove;
 
         private Vector3 _curPos;
@@ -36,8 +34,7 @@ namespace Running.Scripts
         
         private void Awake()
         {
-            _bornPos = player.position;
-            _curPos = _bornPos;
+            _curPos = transform.position;
 
             _leftClamp = leftClamp.position;
             _rightClamp = rightClamp.position;
