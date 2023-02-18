@@ -14,6 +14,8 @@ namespace Running.Scripts
         private void Awake()
         {
             input.OnMove += playerController.OnInputMove;
+            
+            playerController.StartMove();
         }
 
         private void OnDestroy()

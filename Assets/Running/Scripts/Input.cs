@@ -27,19 +27,23 @@ namespace Running.Scripts
         private void CheckInput()
         {
 #if UNITY_EDITOR
+            _inputPosition = UnityEngine.Input.mousePosition;
+            
             if (UnityEngine.Input.GetMouseButtonDown(0))
             {
-                _inputPosition = UnityEngine.Input.mousePosition;
-                
                 if (!_input)
                 {
                     _prevPosition = _inputPosition;
                 }
                 _input = true;
+                
+                Debug.Log($"Input on mouse down {_inputPosition} {_prevPosition}");
             }
             else if (UnityEngine.Input.GetMouseButtonUp(0))
             {
                 _input = false;
+                
+                Debug.Log($"Input on mouse up {_inputPosition} {_prevPosition}");
             }
 #else
             if (Touch.activeTouches.Count > 0)
@@ -60,6 +64,8 @@ namespace Running.Scripts
 #endif
             if (_input)
             {
+                Debug.Log($"Input pos:{_inputPosition} _prev:{_prevPosition}");
+                
                 float normalizedDeltaPosition = (_inputPosition.x - _prevPosition.x) / Screen.width * inputSensitivity;
                 OnMove?.Invoke(normalizedDeltaPosition);
             }

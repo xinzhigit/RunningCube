@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0d4d98ef-e640-4bf7-994c-95212b4893a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunningCube/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunningCube/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Prefab/ground.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Prefab/ground.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Running20230204.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Running20230204.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Running/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +16,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7fbdeb2a625e46ffa352851d3fed42297400/cc/20f42fa4/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1676612162214</updated>
       <workItem from="1676612171821" duration="241000" />
-      <workItem from="1676645485455" duration="1703000" />
+      <workItem from="1676645485455" duration="2494000" />
+      <workItem from="1676722145684" duration="2661000" />
     </task>
     <task id="LOCAL-00001" summary="[FEAT]初始工程">
       <created>1676612273993</created>
@@ -77,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676612273993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[FEAT]添加输入，并整理代码">
+      <created>1676647631298</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676647631298</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +106,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="[FEAT]初始工程" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEAT]初始工程" />
+    <MESSAGE value="[FEAT]添加输入，并整理代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEAT]添加输入，并整理代码" />
   </component>
 </project>
