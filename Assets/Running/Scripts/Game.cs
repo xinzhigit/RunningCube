@@ -13,7 +13,10 @@ namespace Running.Scripts
 
         private void Awake()
         {
+            Application.targetFrameRate = 60;
+            
             input.OnMove += playerController.OnInputMove;
+            input.OnMoveEnd += playerController.OnInputEnd;
             
             playerController.StartMove();
         }
@@ -21,6 +24,7 @@ namespace Running.Scripts
         private void OnDestroy()
         {
             input.OnMove -= playerController.OnInputMove;
+            input.OnMoveEnd -= playerController.OnInputEnd;
         }
     }
 }

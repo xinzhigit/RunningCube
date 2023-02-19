@@ -10,6 +10,8 @@ namespace Running.Scripts
         /// 左右移动
         /// </summary>
         public event Action<float> OnMove;
+
+        public event Action OnMoveEnd;
         
         [SerializeField]
         private float inputSensitivity = 1.5f;
@@ -69,6 +71,11 @@ namespace Running.Scripts
                 float normalizedDeltaPosition = (_inputPosition.x - _prevPosition.x) / Screen.width * inputSensitivity;
                 OnMove?.Invoke(normalizedDeltaPosition);
             }
+            else
+            {
+                OnMoveEnd?.Invoke();
+            }
+            
             _prevPosition = _inputPosition;
         }
     }
