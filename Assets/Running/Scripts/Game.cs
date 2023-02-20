@@ -5,14 +5,17 @@ namespace Running.Scripts
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] 
-        private Input input;
+        public static Game Inst { get; private set; }
 
-        [SerializeField] 
-        private PlayerController playerController;
+        [SerializeField] private Input input;
+
+        [SerializeField] private PlayerController playerController;
+        public PlayerController PlayerController => playerController;
 
         private void Awake()
         {
+            Inst = this;
+            
             Application.targetFrameRate = 60;
             
             input.OnMove += playerController.OnInputMove;

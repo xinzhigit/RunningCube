@@ -7,7 +7,9 @@ namespace Running.Scripts.Obstacle
     {
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log($"Obstacle cube on trigger enter {other.name}");
+            Game.Inst.PlayerController.AddCube(other.transform);
+            
+            // Debug.Log($"Obstacle cube on trigger enter {other.name}");
         }
     }
 }

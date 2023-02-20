@@ -6,10 +6,14 @@ namespace Running.Scripts
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Transform player;
+        
         [SerializeField] private Transform cubeParent;
         
         [SerializeField] private List<Transform> cubes;
 
+        [SerializeField] private float cubeHeight;
+        
         [SerializeField] private Transform leftClamp;
 
         [SerializeField] private Transform rightClamp;
@@ -22,15 +26,12 @@ namespace Running.Scripts
         private Vector3 _rightClamp;
 
         private bool _startMove;
-        private bool _input;
+        // private bool _input;
 
         private Vector3 _curPos;
         private float _targetX;
 
-        public void StartMove()
-        {
-            _startMove = true;
-        }
+        private float _playerCubeHeightDiff;
         
         private void Awake()
         {
@@ -39,6 +40,9 @@ namespace Running.Scripts
 
             _leftClamp = leftClamp.position;
             _rightClamp = rightClamp.position;
+
+            var firstCube = cubes[0];
+            _playerCubeHeightDiff = player.position.y - firstCube.position.y;
         }
 
         private void Update()
@@ -56,17 +60,60 @@ namespace Running.Scripts
             var width = _rightClamp.x - _leftClamp.x;
             _targetX += delta * width;
             _targetX = Mathf.Clamp(_targetX, _leftClamp.x, _rightClamp.x);
+            
+            var horizonSpeed = speed * horizonSpeedFactor;
+            float posTarget = Mathf.Lerp(_curPos.x, _targetX, horizonSpeed);
+            float posDifference = posTarget - _curPos.x;
 
-            _input = true;
+            posDifference = Mathf.Clamp(posDifference, -horizonSpeed, horizonSpeed);
+
+            _curPos.x += posDifference;
+
+            // _input = true;
 
             // Debug.Log($"Player controller input move delta:{delta}");
         }
 
         public void OnInputEnd()
         {
-            _input = false;
+            // _input = false;
         }
         
+        public void StartMove()
+        {
+            _startMove = true;
+        }
+
+        public void AddCube(Transform cube)
+        {
+            if (cubes.Contains(cube))
+            {
+                return;
+            }
+            
+            var last = cubes[^1];
+            cube.parent = last.parent;
+            cube.position = last.position;
+ 
+            for (int i = 0; i < cubes.Count; ++i)
+            {
+                var tempCube = cubes[i];
+                var pos = tempCube.position;
+                pos.y += cubeHeight;
+                tempCube.position = pos;
+            }
+
+            cubes.Add(cube);
+            
+            // 更新角色位置
+            var firstCube = cubes[0];
+            var firstPos = firstCube.position;
+            firstPos.y += _playerCubeHeightDiff;
+            player.position = firstPos;
+            
+            Debug.Log("Player controller add cube");
+        }
+
         private void UpdateMove()
         {
             if (!_startMove)
@@ -77,20 +124,14 @@ namespace Running.Scripts
             var moveDelta = Time.deltaTime * speed;
             _curPos.z += moveDelta;
 
-            if (_input)
-            {
-                var horizonSpeed = speed * horizonSpeedFactor;
-                float newPositionTarget = Mathf.Lerp(_curPos.x, _targetX, horizonSpeed);
-                float newPositionDifference = newPositionTarget - _curPos.x;
-
-                newPositionDifference = Mathf.Clamp(newPositionDifference, -horizonSpeed, horizonSpeed);
-
-                _curPos.x += newPositionDifference;
-            }
+            // if (_input)
+            // {
+            //
+            // }
             
             transform.position = _curPos;
             
-            Debug.Log($"Player controller update delta:{Time.deltaTime} {speed} {moveDelta} {_curPos}");
+            // Debug.Log($"Player controller update delta:{Time.deltaTime} {speed} {moveDelta} {_curPos}");
         }
     }
 }
