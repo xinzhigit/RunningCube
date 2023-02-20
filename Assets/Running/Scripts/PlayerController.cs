@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Running.Scripts
 {
-    public class PlayerController : MonoBehaviour
+    public partial class PlayerController : MonoBehaviour
     {
         [SerializeField] private Transform player;
         
@@ -31,8 +31,6 @@ namespace Running.Scripts
         private Vector3 _curPos;
         private float _targetX;
 
-        private float _playerCubeHeightDiff;
-        
         private void Awake()
         {
             _curPos = transform.position;
@@ -49,6 +47,8 @@ namespace Running.Scripts
         {
             UpdateMove();
         }
+
+        #region move
 
         public void OnInputMove(float delta)
         {
@@ -83,37 +83,7 @@ namespace Running.Scripts
         {
             _startMove = true;
         }
-
-        public void AddCube(Transform cube)
-        {
-            if (cubes.Contains(cube))
-            {
-                return;
-            }
-            
-            var last = cubes[^1];
-            cube.parent = last.parent;
-            cube.position = last.position;
- 
-            for (int i = 0; i < cubes.Count; ++i)
-            {
-                var tempCube = cubes[i];
-                var pos = tempCube.position;
-                pos.y += cubeHeight;
-                tempCube.position = pos;
-            }
-
-            cubes.Add(cube);
-            
-            // 更新角色位置
-            var firstCube = cubes[0];
-            var firstPos = firstCube.position;
-            firstPos.y += _playerCubeHeightDiff;
-            player.position = firstPos;
-            
-            Debug.Log("Player controller add cube");
-        }
-
+        
         private void UpdateMove()
         {
             if (!_startMove)
@@ -133,5 +103,7 @@ namespace Running.Scripts
             
             // Debug.Log($"Player controller update delta:{Time.deltaTime} {speed} {moveDelta} {_curPos}");
         }
+
+        #endregion
     }
 }

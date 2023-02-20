@@ -39,13 +39,13 @@ namespace Running.Scripts
                 }
                 _input = true;
                 
-                Debug.Log($"Input on mouse down {_inputPosition} {_prevPosition}");
+                // Debug.Log($"Input on mouse down {_inputPosition} {_prevPosition}");
             }
             else if (UnityEngine.Input.GetMouseButtonUp(0))
             {
                 _input = false;
                 
-                Debug.Log($"Input on mouse up {_inputPosition} {_prevPosition}");
+                // Debug.Log($"Input on mouse up {_inputPosition} {_prevPosition}");
             }
 #else
             if (Touch.activeTouches.Count > 0)
@@ -66,7 +66,7 @@ namespace Running.Scripts
 #endif
             if (_input)
             {
-                Debug.Log($"Input pos:{_inputPosition} _prev:{_prevPosition}");
+                // Debug.Log($"Input pos:{_inputPosition} _prev:{_prevPosition}");
                 
                 float normalizedDeltaPosition = (_inputPosition.x - _prevPosition.x) / Screen.width * inputSensitivity;
                 OnMove?.Invoke(normalizedDeltaPosition);
