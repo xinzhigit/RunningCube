@@ -5,22 +5,28 @@ namespace Running.Scripts.Obstacle
 {
     public class ObstacleCube : MonoBehaviour
     {
-        private static int _layer;
+        private static int _cubeLayer;
+        private static int _enemyLayer;
 
         private void Awake()
         {
-            _layer = LayerMask.NameToLayer("Cube");
+            _cubeLayer = LayerMask.NameToLayer("Cube");
+            _enemyLayer = LayerMask.NameToLayer("Enemies");
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer != _layer)
+            var playerController = Game.Inst.PlayerController;
+            
+            if (other.gameObject.layer == _cubeLayer)
             {
-                return;
+                playerController.ObstacleCube(other.transform);
             }
-            
-            Game.Inst.PlayerController.ObstacleCube(other.transform);
-            
+            else if (other.gameObject.layer == _enemyLayer)
+            {
+                playerController.ObstacleEnemy(other.GetComponent<ObstacleEnemy>());
+            }
+
             // Debug.Log($"Obstacle cube on trigger enter {other.name}");
         }
     }

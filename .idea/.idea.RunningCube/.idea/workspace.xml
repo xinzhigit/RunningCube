@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4d98ef-e640-4bf7-994c-95212b4893a9" name="Changes" comment="[FEAT]添加角色遇到盒子升高功能">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunningCube/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunningCube/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Prefab/redman_15.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Prefab/redman_15.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Prefab/runningmanClimb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Prefab/runningmanClimb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/Obstacle/ObstacleCube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/Obstacle/ObstacleCube.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Running/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Running/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="0d4d98ef-e640-4bf7-994c-95212b4893a9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7e81dee8026941368f684d24d262c3d91a000/42/76f33cc7/Collider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lizzy/Desktop/LeisureGameGit/RunningCube/Assets/Running/Scripts/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Running/Scripts/Obstacle/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4c96c5c6ac944829b75fbca2bb5e8d8b159400/24/06f74fe5/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4c96c5c6ac944829b75fbca2bb5e8d8b159400/b4/33fb7dfd/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -77,7 +68,7 @@
       <workItem from="1676722145684" duration="3728000" />
       <workItem from="1676811111345" duration="5088000" />
       <workItem from="1676817026614" duration="56000" />
-      <workItem from="1676898478995" duration="5295000" />
+      <workItem from="1676898478995" duration="5508000" />
     </task>
     <task id="LOCAL-00001" summary="[FEAT]初始工程">
       <created>1676612273993</created>
@@ -121,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676900982556</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[FEAT]添加敌人">
+      <created>1676904277753</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676904277753</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +147,7 @@
     <MESSAGE value="[FEAT]添加障碍物" />
     <MESSAGE value="[FEAT]优化效率，避免帧数波动导致的移动跳动的问题" />
     <MESSAGE value="[FEAT]添加角色遇到盒子升高功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEAT]添加角色遇到盒子升高功能" />
+    <MESSAGE value="[FEAT]添加敌人" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEAT]添加敌人" />
   </component>
 </project>
