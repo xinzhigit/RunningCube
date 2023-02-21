@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Running.Scripts.Obstacle;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Running.Scripts
 {
@@ -39,9 +40,28 @@ namespace Running.Scripts
             Debug.Log("Player controller obstacle cube");
         }
 
-        public void ObstacleEnemy(ObstacleEnemy enemy)
+        private List<Transform> _climbTrans = new List<Transform>(20);
+        public void ObstacleEnemy(ObstacleCube obstacleCube, ObstacleEnemy obstacleEnemy)
         {
-            Debug.Log($"Player controller obstacle enemies {enemy.Enemies.Length}");
+            _climbTrans.Clear();
+            for (int i = 0; i < obstacleCube.ClimbPoints.Length; ++i)
+            {
+                _climbTrans.Add(obstacleCube.ClimbPoints[i]);
+            }
+            
+            for (int i = 0; i < obstacleEnemy.Enemies.Length; ++i)
+            {
+                var index = Random.Range(0, _climbTrans.Count);
+                var clampPoint = _climbTrans[index];
+
+                var enemy = obstacleEnemy.Enemies[i];
+                enemy.ToClimb(clampPoint);
+                
+                _climbTrans.RemoveAt(index);
+            }
+            
+            _climbTrans.Clear();
+            // Debug.Log($"Player controller obstacle enemies {obstacleEnemy.Enemies.Length}");
         }
     }
 }

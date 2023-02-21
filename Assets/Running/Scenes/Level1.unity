@@ -1110,6 +1110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandCube
       objectReference: {fileID: 0}
+    - target: {fileID: 1004172466519314716, guid: 5402ecd0f00d945cc850e131ff968217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1062834990350195418, guid: 5402ecd0f00d945cc850e131ff968217,
         type: 3}
       propertyPath: m_RootOrder
@@ -1164,6 +1169,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803882308437012769, guid: 5402ecd0f00d945cc850e131ff968217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491578908145063413, guid: 5402ecd0f00d945cc850e131ff968217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677518712387978833, guid: 5402ecd0f00d945cc850e131ff968217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083709089084713165, guid: 5402ecd0f00d945cc850e131ff968217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5402ecd0f00d945cc850e131ff968217, type: 3}
